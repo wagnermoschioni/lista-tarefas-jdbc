@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import apptarefa.dao.Conexao;
+
 @WebServlet("/main")
 public class MainServlet extends HttpServlet{
 
@@ -16,9 +18,20 @@ public class MainServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+        
+		Conexao con = new Conexao();	
+		/*
 		PrintWriter writer = resp.getWriter();
 		writer.println("<html><body>Teste Servlet Main</body></html>");
+		*/
+		
+		String action = req.getServletPath();
+		System.out.println(action);
+		
+		if (action.equals("/main")) {
+			resp.sendRedirect("quadro.jsp");
+		}
+		
 		
 	}
 }
