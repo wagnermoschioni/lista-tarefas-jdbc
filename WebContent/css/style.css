@@ -3,21 +3,104 @@
 * {
 	font-family: 'Poppins';
 	background-color: #F0FFF0;
-	font-weight: bold;
+	
+	
 }
+
+body {
+	display:flex;	
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 h2 {
 	color: #6bf;
 }
 
-button {
+input:not(.btn) {
+	width: 320px;
+	padding: 7px;
+	background: #fff;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+.btn {
 	background: #6bf;
 	border: none;
 	font-size: 1.2rem;
-	padding: 14px 25px 14px 25px;
-	border-radius: 12px;
+	padding: 8px 14px 8px 14px;
+	border-radius: 8px;
+	color: #f0fff0;
 }
-button a {
+.btn a {
 	text-decoration: none;
 	background: #6bf;
 	color: #f0fff0;
 }
+
+#tabela {
+	margin-top: 30px;
+	border-collapse: collapse;
+}
+
+#tabela th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+	background-color: #6bf;
+	color: #fff;
+
+}
+
+#tabela th:nth-child(2), #tabela td:nth-child(2) {
+	width: 320px;
+}
+
+#tabela th:nth-child(1), #tabela td:nth-child(1) {
+	width: 40px;
+	text-align: center;
+}
+
+#tabela td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	
+	
+}
+
+tbody tr td{
+	background-color: #fff;
+	font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
