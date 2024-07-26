@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import apptarefa.model.TarefaBeans;
@@ -46,12 +45,17 @@ public class TarefaDAO {
 		Conexao conexao = new Conexao();
 		con = conexao.getConexao();
 		
-		String sql = "INSERT INTO Tarefa (descricao, status) values ( ? , ? )";
+		String sql = "INSERT INTO Tarefa (descricao, status, dt_criacao) values ( ? , ?, ? )";
 		
 		try (PreparedStatement pstmt = con.prepareStatement(sql)) {
 
 			pstmt.setString(1, tarefa.getDescricao());
 			pstmt.setString(2, tarefa.getStatus());
+			
+			java.sql.Date dataParam = new java.sql.Date(tarefa.getDataAbertura().getTime());
+			pstmt.setDate(3, dataParam);
+			
+			System.out.println(tarefa.getDataAbertura());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -83,8 +87,4 @@ public class TarefaDAO {
 		
 	}
 
-	public void editarTarefa() {
-		// TODO Auto-generated method stub
-		
-	}
 }

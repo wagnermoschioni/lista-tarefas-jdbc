@@ -1,10 +1,14 @@
 package apptarefa.model;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 public class TarefaBeans {
 	
 	private Long id;
 	private String descricao;
 	private String status;
+	private Date dataAbertura = new Date();
 	
 	
 	public Long getId() {
@@ -24,6 +28,14 @@ public class TarefaBeans {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public Date getDataAbertura() {
+		return dataAbertura;
+	}
+	
+	public void setDataAbertura(Date dataAbertura) {
+		this.dataAbertura = dataAbertura;
 	}
 	
 	

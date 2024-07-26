@@ -68,18 +68,14 @@ public class MainServlet extends HttpServlet{
 	protected void editarTarefa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
 		
 		
-		
-		
-		
 }
 	
 	protected void novaTarefa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
 			
+			
 			bean.setDescricao(req.getParameter("descricao"));
-			bean.setStatus(req.getParameter("status"));
-			
-			new TarefaDAO().inserirTarefa(bean);
-			
+			bean.setStatus(req.getParameter("status"));			
+			new TarefaDAO().inserirTarefa(bean);			
 			resp.sendRedirect("main");
 			
 			
