@@ -12,7 +12,7 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 <link
 	href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 	rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="icon" href="img/favicon.png">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <head>
@@ -31,6 +31,7 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 				<th>ID</th>
 				<th>Descricao</th>
 				<th>Status</th>
+				<th></th>
 			</tr>
 		</thead>
 
@@ -42,7 +43,8 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 				<td><%=lista.get(i).getId()%></td>
 				<td><%=lista.get(i).getDescricao()%></td>
 				<td><%=lista.get(i).getStatus()%></td>
-
+				<td class="acoes"><a href="#"><i class="fa-solid fa-pen-to-square"></i></a><a href="excluir?id=<%=lista.get(i).getId()%>"><i class="fa-solid fa-trash"></i></a></td>
+				
 			</tr>
 			<%
 			}

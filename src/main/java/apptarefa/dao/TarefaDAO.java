@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import apptarefa.model.TarefaBeans;
@@ -57,10 +58,33 @@ public class TarefaDAO {
 
 		} finally {
 			con.close();
-		}
+		}	
 		
 		
+	}
+	
+	public void excluirTarefa(Long id) throws SQLException {
+		  
+	  Conexao conexao = new Conexao();
+	  
+	  con =  conexao.getConexao();
+	  
+	  String sql = "DELETE FROM tarefa WHERE id = ?";
+	  
+	  try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+		  pstmt.setLong(1, id);
+		  pstmt.executeUpdate();
+	  }  catch (SQLException e) {
+		  e.printStackTrace();
+	  }  finally {
+		  con.close();
+	  }
 		
+		
+	}
+
+	public void editarTarefa() {
+		// TODO Auto-generated method stub
 		
 	}
 }

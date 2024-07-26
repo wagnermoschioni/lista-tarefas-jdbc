@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import apptarefa.dao.TarefaDAO;
 import apptarefa.model.TarefaBeans;
 
-@WebServlet(urlPatterns = {"/main", "/novaTarefa", "/listar"})
+@WebServlet(urlPatterns = {"/main", "/novaTarefa", "/listar", "/excluir"})
 public class MainServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
@@ -35,6 +35,7 @@ public class MainServlet extends HttpServlet{
 			req.setAttribute("tarefas", lista);
 			RequestDispatcher requestDispatcher = req.getRequestDispatcher("quadro.jsp");
 			requestDispatcher.forward(req, resp);
+			
 			//resp.sendRedirect("quadro.jsp");
 		} else if (action.equals("/novaTarefa")) {
 			try {
@@ -42,10 +43,35 @@ public class MainServlet extends HttpServlet{
 			} catch (ServletException | IOException | SQLException e) {
 				e.printStackTrace();
 			}
+		} else if (action.equals("/excluir")) {
+			try {
+				String idParam = req.getParameter("id");		
+				Long id = Long.parseLong(idParam);		
+				excluirTarefa(id);
+				resp.sendRedirect("main");
+			} catch (ServletException | IOException | SQLException e) {
+				
+				e.printStackTrace();
+			}
 		}
 		
 		
 	}
+	
+	protected void excluirTarefa (Long id) throws ServletException, IOException, SQLException {
+		
+		
+		new TarefaDAO().excluirTarefa(id);
+		
+	}
+	
+	protected void editarTarefa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
+		
+		
+		
+		
+		
+}
 	
 	protected void novaTarefa(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
 			

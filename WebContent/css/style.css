@@ -18,13 +18,34 @@ h2 {
 	color: #6bf;
 }
 
-input:not(.btn) {
+input:not(.btn){
 	width: 320px;
-	padding: 7px;
+	height: 30px;	
 	background: #fff;
 	border: 1px solid gray;
 	border-radius: 5px;
+	box-sizing: border-box;
+	padding-left: 7px;
+	
 }
+
+
+select {
+	background: #fff;
+	height: 30px;	
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding-left: 7px;
+}
+
+select option {
+    width: 320px;	
+	border: 1px solid gray;
+	
+ }
+
+
+
 
 .btn {
 	background: #6bf;
@@ -33,6 +54,9 @@ input:not(.btn) {
 	padding: 8px 14px 8px 14px;
 	border-radius: 8px;
 	color: #f0fff0;
+	margin-top: 10px;
+	width: 170px;
+	margin: 0 auto;
 }
 .btn a {
 	text-decoration: none;
@@ -74,6 +98,22 @@ tbody tr td{
 	background-color: #fff;
 	font-size: 15px;
 }
+
+tbody tr .acoes a i{
+	color: #949494;
+	padding: 7px;
+	background-color: #fff;
+}
+
+
+.formulario {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	
+}
+
+
 
 
 
