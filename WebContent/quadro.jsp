@@ -29,10 +29,11 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 	<table id="tabela">
 		<thead>
 			<tr>
+			    
 				<th>ID</th>
 				<th>Descricao</th>
 				<th>Status</th>
-				<th><a href="excluirTudo"><i class="fa-solid fa-trash"></i>Excluir tudo</a></th>
+				<th class="exclui-tudo"><a href="excluirTudo">Excluir tudo</a></th>
 			</tr>
 		</thead>
 
@@ -41,20 +42,23 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 			for (int i = 0; i < lista.size(); i++) {
 			%>
 			<tr>
+			
 				<td><%=lista.get(i).getId()%></td>
 				<td><%=lista.get(i).getDescricao()%></td>
 				<td><%=lista.get(i).getStatus()%></td>
 				<td class="acoes"><a href="#"><i class="fa-solid fa-pen-to-square"></i></a><a href="excluir?id=<%=lista.get(i).getId()%>"><i class="fa-solid fa-trash"></i></a></td>
 				
 			</tr>
+			
 			<%
 			}
 			%>
+			
 		</tbody>
 	</table>
 	
 	<% } else { %>
-	    <h2 class="sem-tarefas">Não há tarefas</h2>
+	    <h2 class="sem-tarefas">Não há tarefas <i class="fa-solid fa-face-frown-open"></i></h2>
 	<% } %>
 
 

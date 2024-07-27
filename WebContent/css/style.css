@@ -103,10 +103,21 @@ tbody tr td{
 	font-size: 15px;
 }
 
+tbody tr .acoes{
+	text-align: center;
+}
+
 tbody tr .acoes a i{
 	color: #949494;
 	padding: 7px;
 	background-color: #fff;
+}
+
+thead tr .exclui-tudo a, thead tr .exclui-tudo a i {
+	background-color: transparent;
+	text-decoration: none;
+	color: yellow;
+	font-size: 13px;
 }
 
 
