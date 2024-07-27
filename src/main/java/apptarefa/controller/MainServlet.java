@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import apptarefa.dao.TarefaDAO;
 import apptarefa.model.TarefaBeans;
 
-@WebServlet(urlPatterns = {"/main", "/novaTarefa", "/listar", "/excluir"})
+@WebServlet(urlPatterns = {"/main", "/novaTarefa", "/listar", "/excluir", "/excluirTudo"})
 public class MainServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
@@ -53,8 +53,23 @@ public class MainServlet extends HttpServlet{
 				
 				e.printStackTrace();
 			}
+		} else if (action.equals("/excluirTudo")) {
+			try {			
+				excluirTudo();
+				resp.sendRedirect("main");
+			} catch (ServletException | IOException | SQLException e) {
+				
+				e.printStackTrace();
+			}
 		}
 		
+		
+	}
+	
+protected void excluirTudo () throws ServletException, IOException, SQLException {
+		
+		
+		new TarefaDAO().excluirTudo();
 		
 	}
 	

@@ -86,5 +86,26 @@ public class TarefaDAO {
 		
 		
 	}
+	
+	
+	public void excluirTudo() throws SQLException {
+		  
+		  Conexao conexao = new Conexao();
+		  
+		  con =  conexao.getConexao();
+		  
+		  String sql = "DELETE FROM tarefa";
+		  
+		  try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+			 // pstmt.setLong(1, id);
+			  pstmt.executeUpdate();
+		  }  catch (SQLException e) {
+			  e.printStackTrace();
+		  }  finally {
+			  con.close();
+		  }
+			
+			
+		}
 
 }

@@ -24,19 +24,19 @@
 
 		Descrição: <input type="text" name="descricao" id="desc" />
 		 <input type="hidden" name="data" id="data" />
-		 Status: 
+		 <h3 hidden>Status:</h3> 
 		 <!-- 
 		 <input
 			type="text" name="status" id="status" />
 			 -->
 			 
-			<select name="status">
+			<select name="status" hidden>
 			<option value="A iniciar">A iniciar</option>
 			<option value="Em andamento">Em andamento</option>
 			<option value="Concluído">Concluído</option>
 		</select>
 			
-			
+			 <input type="hidden" name="status_hidden" id="status_hidden" value="A iniciar">
 			 <input class="btn"
 			type="button" value="Gravar" onclick="validar()" /> 
 			

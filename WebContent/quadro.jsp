@@ -20,18 +20,19 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 <title>Tarefas</title>
 </head>
 <body>
-	<h2>Tarefas</h2>
+	<h2>MINHAS TAREFAS</h2>
 	<button class="btn">
 		<a href="formNovaTarefa.html">+ Nova</a>
 	</button>
 	
+	<%if (!lista.isEmpty()) { %>
 	<table id="tabela">
 		<thead>
 			<tr>
 				<th>ID</th>
 				<th>Descricao</th>
 				<th>Status</th>
-				<th></th>
+				<th><a href="excluirTudo"><i class="fa-solid fa-trash"></i>Excluir tudo</a></th>
 			</tr>
 		</thead>
 
@@ -51,6 +52,10 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 			%>
 		</tbody>
 	</table>
+	
+	<% } else { %>
+	    <h2 class="sem-tarefas">Não há tarefas</h2>
+	<% } %>
 
 
 </body>

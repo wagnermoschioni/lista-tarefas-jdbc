@@ -18,6 +18,10 @@ h2 {
 	color: #6bf;
 }
 
+.sem-tarefas {
+	color: orange;
+}
+
 input:not(.btn){
 	width: 320px;
 	height: 30px;	
