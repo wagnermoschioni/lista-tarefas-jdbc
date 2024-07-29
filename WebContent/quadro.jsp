@@ -46,7 +46,7 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 				<td><%=lista.get(i).getId()%></td>
 				<td><%=lista.get(i).getDescricao()%></td>
 				<td><%=lista.get(i).getStatus()%></td>
-				<td class="acoes"><a href="#"><i class="fa-solid fa-pen-to-square"></i></a><a href="excluir?id=<%=lista.get(i).getId()%>"><i class="fa-solid fa-trash"></i></a></td>
+				<td class="acoes"><a href="exibirEditar?id=<%=lista.get(i).getId()%>"><i class="fa-solid fa-pen-to-square"></i></a><a href="excluir?id=<%=lista.get(i).getId()%>"><i class="fa-solid fa-trash"></i></a></td>
 				
 			</tr>
 			

@@ -40,6 +40,40 @@ public class TarefaDAO {
 
 	}
 	
+	public TarefaBeans buscarPorId(Long id) {
+
+		Conexao conexao = new Conexao();
+		con = conexao.getConexao();
+		TarefaBeans tarefa = null;
+
+		String sql = "SELECT * FROM Tarefa WHERE id = ?";
+		try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+			pstmt.setLong(1, id);
+
+			try (ResultSet rs = pstmt.executeQuery()) {
+				if (rs.next()) {
+					String descricao = rs.getString("descricao");	
+					String status = rs.getString("status");
+					//java.sql.Date dtNascimentoSql = rs.getDate("dt_nascimento");
+					//java.util.Date dtNascimento = new java.util.Date(dtNascimentoSql.getTime());
+
+					tarefa = new TarefaBeans();
+					tarefa.setId(id);
+					tarefa.setDescricao(descricao);
+					tarefa.setStatus(status);
+					
+				}
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return tarefa;
+		}
+		return tarefa;
+		
+
+	}
+	
 	public void inserirTarefa(TarefaBeans tarefa) throws SQLException {
 		
 		Conexao conexao = new Conexao();
@@ -97,8 +131,7 @@ public class TarefaDAO {
 		  String sql = "DELETE FROM tarefa";
 		  
 		  try (PreparedStatement pstmt = con.prepareStatement(sql)) {
-			 // pstmt.setLong(1, id);
-			  pstmt.executeUpdate();
+			 pstmt.executeUpdate();
 		  }  catch (SQLException e) {
 			  e.printStackTrace();
 		  }  finally {
@@ -107,5 +140,24 @@ public class TarefaDAO {
 			
 			
 		}
+	
+		public void atualizarTarefa(Long id, String descricao, String status) throws SQLException {
+			Conexao conexao = new Conexao();
 
+			con = conexao.getConexao();
+
+			String sql = "UPDATE tarefa set descricao = ?, status = ? WHERE id = ?";
+
+			try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+				pstmt.setString(1, descricao);
+				pstmt.setString(2, status);
+				pstmt.setLong(3, id);
+				pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				con.close();
+			}
+
+		}
 }
