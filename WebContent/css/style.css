@@ -82,6 +82,14 @@ select option {
 
 }
 
+thead tr .exclui-tudo a{
+	background-color: transparent;
+	text-decoration: none;
+	color: yellow;
+	font-size: 13px;
+}
+
+
 #tabela th:nth-child(2), #tabela td:nth-child(2) {
 	width: 320px;
 }
@@ -113,12 +121,8 @@ tbody tr .acoes a i{
 	background-color: #fff;
 }
 
-thead tr .exclui-tudo a, thead tr .exclui-tudo a i {
-	background-color: transparent;
-	text-decoration: none;
-	color: yellow;
-	font-size: 13px;
-}
+
+
 
 
 .formulario {

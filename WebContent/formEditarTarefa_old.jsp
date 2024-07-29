@@ -5,12 +5,11 @@
 <%
 TarefaBeans tarefa = (TarefaBeans) request.getAttribute("tarefa");
 %>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Alteração</title>
+<title>Editar Tarefa</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +38,7 @@ TarefaBeans tarefa = (TarefaBeans) request.getAttribute("tarefa");
 			<option value="" selected disabled><%=tarefa.getStatus()%></option>
 			<option value="A iniciar">A iniciar</option>
 			<option value="Em andamento">Em andamento</option>
-			<option value="Concluído">Concluído</option>
+			<option value="ConcluÃ­do">Concluído</option>
 		    </select>			
 			 <input type="hidden" name="status_hidden" id="status_hidden" value="A iniciar">
 			 <input class="btn"
