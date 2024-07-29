@@ -7,6 +7,8 @@
 	
 }
 
+
+
 body {
 	display:flex;	
 	flex-direction: column;
@@ -22,6 +24,13 @@ h2 {
 	color: orange;
 }
 
+ .error {
+            color: red;
+            display: none; /* Inicialmente, a mensagem de erro está oculta */
+            font-size: 12px;
+            
+        }
+
 input:not(.btn){
 	width: 320px;
 	height: 30px;	
@@ -30,6 +39,7 @@ input:not(.btn){
 	border-radius: 5px;
 	box-sizing: border-box;
 	padding-left: 7px;
+	outline: none;
 	
 }
 
@@ -58,9 +68,9 @@ select option {
 	padding: 8px 14px 8px 14px;
 	border-radius: 8px;
 	color: #f0fff0;
-	margin-top: 10px;
-	width: 170px;
-	margin: 0 auto;
+	margin-top: 15px;
+	width: 140px;
+	margin: 15px auto;
 }
 .btn a {
 	text-decoration: none;
@@ -68,8 +78,26 @@ select option {
 	color: #f0fff0;
 }
 
+.container {
+	 position: relative;
+    text-align: center;
+	}
+
+
+.total {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    font-size: 15px;
+  	padding-top: 32px;
+    font-weight:bold;
+    color: #a6a6a6;
+}
+
 #tabela {
-	margin-top: 30px;
+	display: inline-block;
+    text-align: left;
+    margin-top: 57px;
 	border-collapse: collapse;
 }
 
@@ -123,7 +151,9 @@ tbody tr .acoes a i{
 
 
 
-
+.status-cor {
+	font-weight: bold;
+}
 
 .formulario {
 	display: flex;

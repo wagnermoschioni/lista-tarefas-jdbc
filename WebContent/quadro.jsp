@@ -21,17 +21,20 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 </head>
 <body>
 	<h2>MINHAS TAREFAS</h2>
+	
 	<button class="btn">
 		<a href="formNovaTarefa.html">+ Nova</a>
 	</button>
 	
 	<%if (!lista.isEmpty()) { %>
+	<div class="container">
+	<h2 class="total">Total: <%=lista.size()%></h2>
 	<table id="tabela">
 		<thead>
 			<tr>
 			    
 				<th>ID</th>
-				<th>Descricao</th>
+				<th>Descrição</th>
 				<th>Status</th>
 				<th class="exclui-tudo"><a href="excluirTudo">Excluir tudo</a></th>
 			</tr>
@@ -45,7 +48,7 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 			
 				<td><%=lista.get(i).getId()%></td>
 				<td><%=lista.get(i).getDescricao()%></td>
-				<td><%=lista.get(i).getStatus()%></td>
+				<td class="status-cor"><%=lista.get(i).getStatus()%></td>
 				<td class="acoes"><a href="exibirEditar?id=<%=lista.get(i).getId()%>"><i class="fa-solid fa-pen-to-square"></i></a><a href="excluir?id=<%=lista.get(i).getId()%>"><i class="fa-solid fa-trash"></i></a></td>
 				
 			</tr>
@@ -56,11 +59,12 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 			
 		</tbody>
 	</table>
-	
+	</div>
+
 	<% } else { %>
 	    <h2 class="sem-tarefas">Não há tarefas <i class="fa-solid fa-face-frown-open"></i></h2>
 	<% } %>
 
-
+	<script type="text/javascript" src="js/validador.js"></script>
 </body>
 </html>

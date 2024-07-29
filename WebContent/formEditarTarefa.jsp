@@ -30,7 +30,7 @@ TarefaBeans tarefa = (TarefaBeans) request.getAttribute("tarefa");
 		<input type="hidden" name="id" id="data" value="<%=tarefa.getId()%>"  />
 		Descrição: <input type="text" name="descricao" id="desc" value="<%=tarefa.getDescricao() %>"/>
 		 <input type="hidden" name="data" id="data"  />
-		 <h3 hidden>Status:</h3> 
+		 Status:
 		 <!-- 
 		 <input
 			type="text" name="status" id="status" />
