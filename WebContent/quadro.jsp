@@ -28,7 +28,7 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 	
 	<%if (!lista.isEmpty()) { %>
 	<div class="container">
-	<h2 class="total">Total: <%=lista.size()%></h2>
+	<h2 class="total">Total: <%=String.format("%02d", lista.size())%></h2>
 	<table id="tabela">
 		<thead>
 			<tr>

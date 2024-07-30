@@ -7,7 +7,22 @@
 	
 }
 
+@keyframes glow {
+	
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+  }
+}
 
+.shine-effect {
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
 
 body {
 	display:flex;	
@@ -130,6 +145,13 @@ thead tr .exclui-tudo a{
 #tabela td {
 	border: 1px solid #ddd;
 	padding: 8px;
+	font-weight: bold;
+	
+	
+}
+
+#tabela td:nth-child(1) {
+	color: #949494;
 	
 	
 }

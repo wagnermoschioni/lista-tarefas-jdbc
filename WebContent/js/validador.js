@@ -1,23 +1,16 @@
 
  function validar() {
-	/*
-	  var inputDescricao = document.getElementById('desc').value;
-	   if (inputDescricao === "") {
-                window.alert("O campo descrição está vazio!");
-                document.getElementById('desc').focus();
-                inputDescricao.style.backgrounColor = "red;"
-            }  else {				
-				document.forms["frmContato"].submit();
-			}   */
+	
 			var inputField = document.getElementById('desc');
             var errorMessage = document.getElementById('error-message');
-
+			
             if (inputField.value.trim() === '') {
 				inputField.style.borderColor = 'red';
-                errorMessage.style.display = 'block';
+                errorMessage.style.display = 'block';               
                 inputField.focus();
             } else {
-                errorMessage.style.display = 'none';
+                 errorMessage.style.display = 'none';
+                 document.forms["frmContato"].submit();
             }
 			
  }
