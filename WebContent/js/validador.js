@@ -36,4 +36,20 @@ window.onload = function() {
             });	
 	
 	 }
+	 
+	 
+	 
+	 function confirmDeletion(event) {
+    event.preventDefault();
+    document.getElementById('confirmationModal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('confirmationModal').style.display = 'none';
+}
+
+function confirmAction() {
+    // Redireciona para o servlet mapeado com "/excluirTudo"
+    window.location.href = 'excluirTudo';
+}
 	

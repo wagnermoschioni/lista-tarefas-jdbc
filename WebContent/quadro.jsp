@@ -36,7 +36,7 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 				<th>ID</th>
 				<th>Descrição</th>
 				<th>Status</th>
-				<th class="exclui-tudo"><a href="excluirTudo">Excluir tudo</a></th>
+				<th class="exclui-tudo"><a href="excluirTudo" onclick="confirmDeletion(event)">Excluir tudo</a></th>
 			</tr>
 		</thead>
 
@@ -60,6 +60,16 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 		</tbody>
 	</table>
 	</div>
+	
+	<!--Modal  -->
+	 <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()"></span>
+            <p>Deseja excluir todos os registros?</p>
+            <button onclick="confirmAction()">Sim</button>
+            <button onclick="closeModal()">Cancelar</button>
+        </div>
+    </div>
 
 	<% } else { %>
 	    <h2 class="sem-tarefas">Não há tarefas <i class="fa-solid fa-face-frown-open"></i></h2>
