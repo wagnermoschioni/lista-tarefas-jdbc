@@ -65,7 +65,7 @@ List<TarefaBeans> lista = (List<TarefaBeans>) request.getAttribute("tarefas");
 	 <div id="confirmationModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()"></span>
-            <p>Deseja excluir todos os registros?</p>
+            <p>Deseja excluir todos os registros (<%=lista.size()%>)?</p>
             <button onclick="confirmAction()">Sim</button>
             <button onclick="closeModal()">Cancelar</button>
         </div>

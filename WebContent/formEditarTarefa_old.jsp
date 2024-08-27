@@ -44,7 +44,8 @@ TarefaBeans tarefa = (TarefaBeans) request.getAttribute("tarefa");
 			 <input class="btn"
 			type="submit" value="Confirmar" /> 
 			
-
+						
+			
 		<script type="text/javascript" src="js/validador.js"></script>
 	</form>
 </body>
