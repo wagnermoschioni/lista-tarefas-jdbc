@@ -19,7 +19,7 @@ public class TarefaDAO {
 		con = conexao.getConexao();
 		List<TarefaBeans> tarefas = new ArrayList<TarefaBeans>();
 
-		String sql = "SELECT * FROM Tarefa";
+		String sql = "SELECT * FROM tb_tarefa";
 
 		try (PreparedStatement pstmt = con.prepareStatement(sql); ResultSet rs = pstmt.executeQuery()) {
 
@@ -46,7 +46,7 @@ public class TarefaDAO {
 		con = conexao.getConexao();
 		TarefaBeans tarefa = null;
 
-		String sql = "SELECT * FROM Tarefa WHERE id = ?";
+		String sql = "SELECT * FROM tb_tarefa WHERE id = ?";
 		try (PreparedStatement pstmt = con.prepareStatement(sql)) {
 			pstmt.setLong(1, id);
 
@@ -54,9 +54,7 @@ public class TarefaDAO {
 				if (rs.next()) {
 					String descricao = rs.getString("descricao");	
 					String status = rs.getString("status");
-					//java.sql.Date dtNascimentoSql = rs.getDate("dt_nascimento");
-					//java.util.Date dtNascimento = new java.util.Date(dtNascimentoSql.getTime());
-
+					
 					tarefa = new TarefaBeans();
 					tarefa.setId(id);
 					tarefa.setDescricao(descricao);
@@ -79,7 +77,7 @@ public class TarefaDAO {
 		Conexao conexao = new Conexao();
 		con = conexao.getConexao();
 		
-		String sql = "INSERT INTO Tarefa (descricao, status, dt_criacao) values ( ? , ?, ? )";
+		String sql = "INSERT INTO tb_tarefa (descricao, status, dt_criacao) values ( ? , ?, ? )";
 		
 		try (PreparedStatement pstmt = con.prepareStatement(sql)) {
 
@@ -107,7 +105,7 @@ public class TarefaDAO {
 	  
 	  con =  conexao.getConexao();
 	  
-	  String sql = "DELETE FROM tarefa WHERE id = ?";
+	  String sql = "DELETE FROM tb_tarefa WHERE id = ?";
 	  
 	  try (PreparedStatement pstmt = con.prepareStatement(sql)) {
 		  pstmt.setLong(1, id);
@@ -128,7 +126,7 @@ public class TarefaDAO {
 		  
 		  con =  conexao.getConexao();
 		  
-		  String sql = "DELETE FROM tarefa";
+		  String sql = "DELETE FROM tb_tarefa";
 		  
 		  try (PreparedStatement pstmt = con.prepareStatement(sql)) {
 			 pstmt.executeUpdate();
@@ -146,7 +144,7 @@ public class TarefaDAO {
 
 			con = conexao.getConexao();
 
-			String sql = "UPDATE tarefa set descricao = ?, status = ? WHERE id = ?";
+			String sql = "UPDATE tb_tarefa set descricao = ?, status = ? WHERE id = ?";
 
 			try (PreparedStatement pstmt = con.prepareStatement(sql)) {
 				pstmt.setString(1, descricao);
