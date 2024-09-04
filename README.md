@@ -1,5 +1,5 @@
 # Pequena Aplicação JSP de Tarefas a fazer 
-🐶
+
 <h2>Funcionalidades previstas:</h2>
 <ul>
     <li>Cadastro de uma tarefa</li>
